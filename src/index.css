@@ -3,6 +3,15 @@
 @theme {
   --font-sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, Consolas, monospace;
+
+  --color-bg-page: #0d0c0e;
+  --color-bg-surface: #151416;
+  --color-fg-primary: #f5f0f5;
+  --color-fg-secondary: #b8b0c0;
+  --color-fg-muted: #787080;
+  --color-border-subtle: #2a272d;
+  --color-accent-violet: #8b6bff;
+  --color-focus-ring: #8b6bff;
 }
 
 @layer base {
@@ -20,6 +29,8 @@
   body {
     margin: 0;
     min-height: 100vh;
+    background-color: var(--color-bg-page);
+    color: var(--color-fg-primary);
   }
 
   #root {

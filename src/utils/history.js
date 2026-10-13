@@ -80,6 +80,23 @@ export function clearHistory() {
 }
 
 /**
+ * Remove a specific entry from history
+ * @param {string} id - History entry ID
+ * @returns {Array} Updated history
+ */
+export function removeFromHistory(id) {
+  try {
+    const history = getHistory();
+    const updated = history.filter(entry => entry.id !== id);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    return updated;
+  } catch (e) {
+    console.warn('Failed to remove history entry:', e);
+    return getHistory();
+  }
+}
+
+/**
  * Restore an analysis from history
  * @param {string} id - History entry ID
  * @returns {Object|null} { emailText, analysis } or null if not found
